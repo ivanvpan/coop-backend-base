@@ -4,7 +4,7 @@ on:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 jobs:
   build:
-    name: Build on Node ${{ matrix.node }}
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: yarn build
   lint:
-    name: Lint on Node ${{ matrix.node }}
+    name: Lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
