@@ -1,1 +1,3 @@
-import 'another-file'
+import hello from './another-file'
+
+hello()
