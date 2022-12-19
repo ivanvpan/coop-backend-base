@@ -4,11 +4,13 @@ on:
     types: ['opened', 'edited', 'reopened', 'synchronize']
 jobs:
   build:
-    name: Build on Node ${{ matrix.node }}
-    runs-on: ubuntu-latest
+    name: Build on Node ${{ matrix.node }} and ${{ matrix.os }}
     strategy:
+      # Matrix strategy allows us to run the same job on multiple versions of Node and OSs.
+      # Add to it if you need to.
       matrix:
         node: ['18.x']
+        os: [ubuntu-latest]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -26,11 +28,12 @@ jobs:
       - name: Build
         run: yarn build
   lint:
-    name: Lint on Node ${{ matrix.node }}
+    name: Lint on Node ${{ matrix.node }} and ${{ matrix.os }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: ['18.x']
+        os: [ubuntu-latest]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
