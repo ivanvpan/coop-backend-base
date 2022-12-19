@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  // This not a necessary field but apparently eslint works faster if it knows wihch files
+  // are included in your project.
+  "include": [
+    "**/src/**/*.ts"
+  ],
+  "files": [
+    "./src/index.ts"
+  ]
+}
